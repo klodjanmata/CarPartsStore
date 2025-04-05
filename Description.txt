@@ -1,0 +1,38 @@
+🚗 Car Parts Store - Project Requirements
+📄 Short Description
+A console-based Java application to manage inventory and sales information for a car parts store. This system will handle products (car parts), suppliers, and sales transactions. Data will be stored in a relational database (MySQL, PostgreSQL, etc.), and functionalities will include exporting/importing data via CSV files.
+________________________________________
+🎯 Core Features:
+•	Inventory Management (Parts):
+o	Add, update, delete car parts.
+o	View all car parts (with stock quantity, price, supplier).
+•	Supplier Management:
+o	Add, update, delete suppliers.
+o	View suppliers list.
+•	Sales Transactions:
+o	Record a sale transaction (part, quantity, date, total price).
+o	View all sales transactions.
+o	Export sales transactions to CSV.
+•	Import/Export:
+o	Export parts list to CSV.
+o	Import parts list from CSV.
+________________________________________
+📌 Main Entities (Tables in Database):
+✅ Part
+•	id (int, PK)
+•	name (String)
+•	description (String)
+•	price (double)
+•	quantity (int)
+•	supplier_id (int, FK → Supplier)
+✅ Supplier
+•	id (int, PK)
+•	name (String)
+•	contact (String)
+•	phone (String)
+✅ SaleTransaction
+•	id (int, PK)
+•	part_id (int, FK → Part)
+•	quantity (int)
+•	sale_date (Date)
+•	total_price (double)
