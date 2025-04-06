@@ -16,7 +16,7 @@ import java.util.List;
 @Getter
 @Setter
 
-public class Supplier {
+public class    Supplier {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
