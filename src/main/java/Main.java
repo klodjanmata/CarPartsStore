@@ -1,4 +1,5 @@
 import Menu.PartMenu;
+import Menu.SalesMenu;
 import Menu.SupplierMenu;
 import Util.Helper;
 
@@ -26,6 +27,13 @@ public class Main {
 
                 case 2:
                     SupplierMenu.menu();
+                    SupplierMenu.handleSelection(getChoice());
+                    break;
+
+            case 3:
+                SalesMenu.menu();
+                SalesMenu.handleSelection(getChoice());
+                break;
 
         }
     }

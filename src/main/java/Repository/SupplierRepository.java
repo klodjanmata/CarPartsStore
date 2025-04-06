@@ -1,5 +1,6 @@
 package Repository;
 
+import Entity.Supplier;
 import Util.HibernateUtil;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
@@ -40,9 +41,9 @@ public class SupplierRepository {
 //        }
 //    }
 
-    public SupplierRepository getById(int id) {
+    public Supplier getById(int id) {
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
-            return session.find(SupplierRepository.class, id);
+            return session.find(Supplier.class, id);
         }
     }
 

@@ -15,6 +15,19 @@ public class PartMenu {
             case 1:
                 //PartService.addPart();
                 System.out.println("Adding Part");
+                break;
+            case 2:
+                    System.out.println("Deleting Part");
+                    break;
+            case 3:
+                System.out.println("Editing Part");
+                break;
+            case 4:
+                System.out.println("Viewing Part");
+                break;
+            case 0:
+                System.out.println("Exit");
+                break;
         }
     }
 }
