@@ -8,4 +8,21 @@ public class SalesMenu {
         System.out.println("3- Export sales to CSV");
         System.out.println("0 - Exit");
     }
+    public static void handleSelection (int choice){
+        switch (choice) {
+            case 1:
+                System.out.println("Selling");
+                break;
+            case 2:
+                System.out.println("Viewing todays sales");
+                break;
+            case 3:
+                System.out.println("Exporting sales to CSV");
+                break;
+            case 4:
+                System.out.println("Exiting");
+                break;
+
+        }
+    }
 }
