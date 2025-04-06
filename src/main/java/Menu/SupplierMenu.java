@@ -2,7 +2,7 @@ package Menu;
 
 public class SupplierMenu {
 
-    public void menu(){
+    public static void menu(){
         System.out.println("\nSupplier Menu");
         System.out.println("1 - Add Supplier");
         System.out.println("2 - Delete Supplier");

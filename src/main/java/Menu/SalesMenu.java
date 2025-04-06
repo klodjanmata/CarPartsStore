@@ -1,7 +1,7 @@
 package Menu;
 
 public class SalesMenu {
-    public void menu(){
+    public static void menu(){
         System.out.println("\nSales Menu");
         System.out.println("1- Sell");
         System.out.println("2- View todays sales");

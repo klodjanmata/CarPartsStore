@@ -2,7 +2,7 @@ package Menu;
 
 public class MainMenu {
 
-    public void printMainMenu(){
+    public static void printMainMenu(){
         System.out.println("\nParts Store Manager");
         System.out.println("1 - Part Management");
         System.out.println("2 - Supplier Management");
