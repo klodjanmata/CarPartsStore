@@ -21,7 +21,7 @@ public class Part {
     @Column(name = "description")
     private String description;
     @Column(name = "price")
-    private float price;
+    private double price;
     @Column(name = "quantity")
     private int quantity;
     @ManyToOne
