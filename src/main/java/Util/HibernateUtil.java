@@ -1,5 +1,8 @@
 package Util;
 
+import Entity.Part;
+import Entity.SaleTransaction;
+import Entity.Supplier;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
@@ -10,9 +13,9 @@ public class HibernateUtil {
         try{
             return new Configuration()
                     .configure("hibernate.cfg.xml")
-                    .addAnnotatedClass(Movie.class)
-                    .addAnnotatedClass(Actor.class)
-                    .addAnnotatedClass(Genre.class)
+                    .addAnnotatedClass(Part.class)
+                    .addAnnotatedClass(SaleTransaction.class)
+                    .addAnnotatedClass(Supplier.class)
                     .buildSessionFactory();
         }catch(Exception e){
             e.printStackTrace();
