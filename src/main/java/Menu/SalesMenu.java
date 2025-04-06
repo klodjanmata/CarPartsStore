@@ -1,28 +1,29 @@
 package Menu;
 
-public class SalesMenu {
-    public static void menu(){
-        System.out.println("\nSales Menu");
-        System.out.println("1- Sell");
-        System.out.println("2- View todays sales");
-        System.out.println("3- Export sales to CSV");
-        System.out.println("0 - Exit");
-    }
-    public static void handleSelection (int choice){
-        switch (choice) {
-            case 1:
-                System.out.println("Selling");
-                break;
-            case 2:
-                System.out.println("Viewing todays sales");
-                break;
-            case 3:
-                System.out.println("Exporting sales to CSV");
-                break;
-            case 4:
-                System.out.println("Exiting");
-                break;
+import Service.SaleTransactionService;
+import Util.Helper;
 
+public class SalesMenu {
+    private static final SaleTransactionService saleService = new SaleTransactionService();
+
+    public static void menu() {
+        int choice;
+        do {
+            System.out.println("\nSales Menu");
+            System.out.println("1- Sell Part");
+            System.out.println("2- View Sales");
+            System.out.println("0 - Exit");
+            choice = Helper.getIntFromUser();
+            handleSelection(choice);
+        } while (choice != 0);
+    }
+
+    public static void handleSelection(int choice) {
+        switch (choice) {
+            case 1 -> saleService.sellPart();
+            case 2 -> saleService.viewSales();
+            case 0 -> System.out.println("Exiting Sales Menu");
+            default -> System.out.println("Invalid selection");
         }
     }
 }

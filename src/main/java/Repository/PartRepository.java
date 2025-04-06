@@ -5,32 +5,30 @@ import Util.HibernateUtil;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
-import jakarta.transaction.Transaction;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import java.util.List;
 
 public class PartRepository {
-    public void save(Part parts) {
-        try(Session session = HibernateUtil.getSessionFactory().openSession()){
-            Transaction transaction = (Transaction) session.beginTransaction();
-            session.merge(parts);
+    public void save(Part part) {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            Transaction transaction = session.beginTransaction();
+            session.merge(part);
             transaction.commit();
-        }catch (Exception e){
-            e.printStackTrace();
         }
     }
-    public void delete(Part parts) {
-        try(Session session = HibernateUtil.getSessionFactory().openSession()){
-            Transaction transaction = (Transaction) session.beginTransaction();
-            session.remove(parts);
+
+    public void delete(Part part) {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            Transaction transaction = session.beginTransaction();
+            session.remove(part);
             transaction.commit();
-        }catch (Exception e){
-            e.printStackTrace();
         }
     }
+
     public Part getById(int id) {
-        try(Session session = HibernateUtil.getSessionFactory().openSession()){
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             return session.find(Part.class, id);
         }
     }
@@ -45,3 +43,4 @@ public class PartRepository {
         }
     }
 }
+

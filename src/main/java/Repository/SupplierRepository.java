@@ -11,47 +11,33 @@ import org.hibernate.Transaction;
 import java.util.List;
 
 public class SupplierRepository {
-    public void save(SupplierRepository supplier) {
-        try(Session session = HibernateUtil.getSessionFactory().openSession()){
+    public void save(Supplier supplier) {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             Transaction transaction = session.beginTransaction();
             session.merge(supplier);
             transaction.commit();
-        }catch (Exception e){
-            e.printStackTrace();
         }
     }
 
-    public void delete(SupplierRepository supplier) {
-        try(Session session = HibernateUtil.getSessionFactory().openSession()){
+    public void delete(Supplier supplier) {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             Transaction transaction = session.beginTransaction();
             session.remove(supplier);
             transaction.commit();
-        }catch (Exception e){
-            e.printStackTrace();
         }
     }
 
-//    public void update(Author author) {
-//        try(Session session = HibernateUtil.getSessionFactory().openSession()){
-//            Transaction transaction = session.beginTransaction();
-//            session.merge(author);
-//            transaction.commit();
-//        }catch (Exception e){
-//            e.printStackTrace();
-//        }
-//    }
-
     public Supplier getById(int id) {
-        try(Session session = HibernateUtil.getSessionFactory().openSession()){
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             return session.find(Supplier.class, id);
         }
     }
 
-    public List<SupplierRepository> findAll() {
+    public List<Supplier> findAll() {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             CriteriaBuilder cb = session.getCriteriaBuilder();
-            CriteriaQuery<SupplierRepository> cq = cb.createQuery(SupplierRepository.class);
-            Root<SupplierRepository> root = cq.from(SupplierRepository.class);
+            CriteriaQuery<Supplier> cq = cb.createQuery(Supplier.class);
+            Root<Supplier> root = cq.from(Supplier.class);
             cq.select(root);
             return session.createQuery(cq).getResultList();
         }

@@ -22,8 +22,8 @@ public class    Supplier {
     private int id;
     @Column(name = "name")
     private String name;
-    @Column(name = "contact")
-    private String contact;
+    @Column(name = "email")
+    private String email;
     @Column(name = "phone")
     private String phone;
     @OneToMany(mappedBy = "supplier")

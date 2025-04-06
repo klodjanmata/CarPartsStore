@@ -1,38 +1,34 @@
 package Menu;
 
-import javax.swing.text.View;
-import java.sql.SQLOutput;
+import Service.SupplierService;
+import Util.Helper;
 
 public class SupplierMenu {
+    private static final SupplierService supplierService = new SupplierService();
 
-    public static void menu(){
-        System.out.println("\nSupplier Menu");
-        System.out.println("1 - Add Supplier");
-        System.out.println("2 - Delete Supplier");
-        System.out.println("3 - Edit Supplier");
-        System.out.println("4 - View Supplier");
-        System.out.println("0 - Exit");
+    public static void menu() {
+        int choice;
+        do {
+            System.out.println("\nSupplier Menu");
+            System.out.println("1 - Add Supplier");
+            System.out.println("2 - Delete Supplier");
+            System.out.println("3 - Edit Supplier");
+            System.out.println("4 - View Supplier");
+            System.out.println("0 - Exit");
+            choice = Helper.getIntFromUser();
+            handleSelection(choice);
+        } while (choice != 0);
     }
 
-    public static void handleSelection(int choice){
+    public static void handleSelection(int choice) {
         switch (choice) {
-
-
-            case 1:
-                System.out.println("Adding Supplier");
-                break;
-            case 2:
-                    System.out.println("Deleting Supplier");
-                    break;
-            case 3:
-                System.out.println("Editing Supplier");
-                break;
-            case 4:
-                System.out.println("Viewing Supplier");
-                break;
-            case 0:
-                System.out.println("Exit");
-                break;
+            case 1 -> supplierService.addSupplier();
+            case 2 -> supplierService.deleteSupplier();
+            case 3 -> supplierService.editSupplier();
+            case 4 -> supplierService.viewSuppliers();
+            case 0 -> System.out.println("Exiting Supplier Menu");
+            default -> System.out.println("Invalid selection");
         }
     }
 }
+

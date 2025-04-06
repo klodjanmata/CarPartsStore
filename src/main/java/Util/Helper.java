@@ -36,6 +36,14 @@ public class Helper {
         }
     }
 
+
+    public static double getDoubleFromUser() {
+        Scanner input = new Scanner(System.in);
+        double number = input.nextDouble();
+       return number;
+    }
+
+
     public static float getFloatFromUser(){
         Scanner input = new Scanner(System.in);
         float number = input.nextFloat();
