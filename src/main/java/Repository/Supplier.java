@@ -9,40 +9,48 @@ import org.hibernate.Transaction;
 
 import java.util.List;
 
-public class SaleTransaction {
-    public void save(SaleTransaction sale) {
+public class Supplier {
+    public void save(Supplier supplier) {
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
             Transaction transaction = session.beginTransaction();
-            session.merge(sale);
+            session.merge(supplier);
             transaction.commit();
         }catch (Exception e){
             e.printStackTrace();
         }
     }
 
-    public void delete(SaleTransaction sale) {
+    public void delete(Supplier supplier) {
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
             Transaction transaction = session.beginTransaction();
-            session.remove(sale);
+            session.remove(supplier);
             transaction.commit();
         }catch (Exception e){
             e.printStackTrace();
         }
     }
 
+//    public void update(Author author) {
+//        try(Session session = HibernateUtil.getSessionFactory().openSession()){
+//            Transaction transaction = session.beginTransaction();
+//            session.merge(author);
+//            transaction.commit();
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
+//    }
 
-
-    public SaleTransaction getById(int id) {
+    public Supplier getById(int id) {
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
-            return session.find(SaleTransaction.class, id);
+            return session.find(Supplier.class, id);
         }
     }
 
-    public List<SaleTransaction> findAll() {
+    public List<Supplier> findAll() {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             CriteriaBuilder cb = session.getCriteriaBuilder();
-            CriteriaQuery<SaleTransaction> cq = cb.createQuery(SaleTransaction.class);
-            Root<SaleTransaction> root = cq.from(SaleTransaction.class);
+            CriteriaQuery<Supplier> cq = cb.createQuery(Supplier.class);
+            Root<Supplier> root = cq.from(Supplier.class);
             cq.select(root);
             return session.createQuery(cq).getResultList();
         }
