@@ -25,7 +25,7 @@ public class SupplierMenu {
             case 1 -> supplierService.addSupplier();
             case 2 -> supplierService.deleteSupplier();
             case 3 -> supplierService.editSupplier();
-            case 4 -> supplierService.viewSuppliers();
+            case 4 -> supplierService.printAllSuppliers();
             case 0 -> System.out.println("Exiting Supplier Menu");
             default -> System.out.println("Invalid selection");
         }
