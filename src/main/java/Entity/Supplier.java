@@ -25,7 +25,7 @@ public class    Supplier {
     @Column(name = "email")
     private String email;
     @Column(name = "phone")
-    private String phone;
+    private Double phone;
     @OneToMany(mappedBy = "supplier")
     private List<Part>parts;
 }
