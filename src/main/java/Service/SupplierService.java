@@ -26,6 +26,7 @@ public class SupplierService {
 
         System.out.println("Write phone number:");
         s.setPhone(Helper.getDoubleFromUser());
+        supplierRepository.save(s);
 
     }
 

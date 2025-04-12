@@ -28,4 +28,14 @@ public class    Supplier {
     private Double phone;
     @OneToMany(mappedBy = "supplier")
     private List<Part>parts;
+
+    @Override
+    public String toString() {
+        return "Supplier{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", phone=" + phone +
+                '}';
+    }
 }
