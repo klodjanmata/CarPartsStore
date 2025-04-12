@@ -18,13 +18,13 @@ public class PartService {
         System.out.print("Name: ");
         p.setName(Helper.getStringFromUser());
 
-        System.out.println("Description:");
+        System.out.print("Description:");
         p.setDescription(Helper.getStringFromUser());
 
-        System.out.println("Price:");
+        System.out.print("Price:");
         p.setPrice(Helper.getDoubleFromUser());
 
-        System.out.println("Quantity ");
+        System.out.print("Quantity ");
         p.setQuantity(Helper.getIntFromUser());
         System.out.print("Supplier ID: ");
         p.setSupplier(supplierRepository.getById(Helper.getIntFromUser()));
@@ -44,13 +44,13 @@ public class PartService {
         System.out.print("Name: ");
         p.setName(Helper.getStringFromUser());
 
-        System.out.println("Description:");
+        System.out.print("Description:");
         p.setDescription(Helper.getStringFromUser());
 
-        System.out.println("Price:");
+        System.out.print("Price:");
         p.setPrice(Helper.getDoubleFromUser());
 
-        System.out.println("Quantity ");
+        System.out.print("Quantity ");
         p.setQuantity(Helper.getIntFromUser());
         System.out.print("Supplier ID: ");
         p.setSupplier(supplierRepository.getById(Helper.getIntFromUser()));

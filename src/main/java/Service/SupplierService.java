@@ -25,7 +25,7 @@ public class SupplierService {
         s.setEmail(Helper.getStringFromUser());
 
         System.out.println("Write phone number:");
-        s.setPhone(Helper.getDoubleFromUser());
+        s.setPhone(Helper.getStringFromUser());
         supplierRepository.save(s);
 
     }
@@ -52,7 +52,7 @@ public class SupplierService {
         s.setEmail(Helper.getStringFromUser());
 
         System.out.println("Write phone number:");
-        s.setPhone(Helper.getDoubleFromUser());
+        s.setPhone(Helper.getStringFromUser());
 
         supplierRepository.save(s);
     }
