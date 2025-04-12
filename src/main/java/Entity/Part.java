@@ -27,4 +27,17 @@ public class Part {
     @ManyToOne
     @JoinColumn(name = "supplier_id")
     private Supplier supplier;
+
+    @Override
+    public String toString() {
+        return
+
+                " " + id +"\t"+
+                " " + name + "\t" +
+                " " + description + "\t" +
+                " " + price + "\t"+
+                " " + quantity + "\t"+
+                " " + supplier +"\t";
+
+    }
 }

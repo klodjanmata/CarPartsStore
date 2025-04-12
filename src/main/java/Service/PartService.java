@@ -5,29 +5,63 @@ import Repository.PartRepository;
 import Repository.SupplierRepository;
 import Util.Helper;
 
+import java.util.HashMap;
+import java.util.List;
+
 public class PartService {
     private final PartRepository partRepository = new PartRepository();
     private final SupplierRepository supplierRepository = new SupplierRepository();
-    public void addPart(){
-        System.out.println("Adding a new part!");
+
+    public void addPart() {
+        HashMap<String, Part> lecturers = new HashMap<>();
         Part p = new Part();
-        System.out.println("Write Name:");
+        System.out.print("Name: ");
         p.setName(Helper.getStringFromUser());
 
-        System.out.println("Write description");
-       p.setDescription(Helper.getStringFromUser());
+        System.out.println("Description:");
+        p.setDescription(Helper.getStringFromUser());
 
-        System.out.println("Put the Price ");
-        p.setPrice(Helper.getFloatFromUser());
+        System.out.println("Price:");
+        p.setPrice(Helper.getDoubleFromUser());
 
-        System.out.println("Put the quantity");
+        System.out.println("Quantity ");
         p.setQuantity(Helper.getIntFromUser());
-
-        System.out.println("Set Supplier Id");
+        System.out.print("Supplier ID: ");
         p.setSupplier(supplierRepository.getById(Helper.getIntFromUser()));
+        partRepository.save(p);
     }
-     public void printAllParts(){
-         System.out.println();
-     }
-}
 
+    public void deletePart(){
+        System.out.print("Part ID: ");
+        Part p = partRepository.getById(Helper.getIntFromUser());
+        partRepository.delete(p);
+        System.out.println("Part Deleted!");
+    }
+
+    public void editPart(){
+        System.out.print("Part ID: ");
+        Part p = partRepository.getById(Helper.getIntFromUser());
+        System.out.print("Name: ");
+        p.setName(Helper.getStringFromUser());
+
+        System.out.println("Description:");
+        p.setDescription(Helper.getStringFromUser());
+
+        System.out.println("Price:");
+        p.setPrice(Helper.getDoubleFromUser());
+
+        System.out.println("Quantity ");
+        p.setQuantity(Helper.getIntFromUser());
+        System.out.print("Supplier ID: ");
+        p.setSupplier(supplierRepository.getById(Helper.getIntFromUser()));
+        partRepository.save(p);
+    }
+    public void printAllParts() {
+        List<Part> parts = partRepository.findAll();
+        for (Part p: parts){
+            System.out.println(p);
+        }
+    }
+
+
+}
