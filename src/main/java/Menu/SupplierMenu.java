@@ -3,7 +3,8 @@ package Menu;
 import Service.SupplierService;
 import Util.Helper;
 
-public class SupplierMenu {
+public class
+SupplierMenu {
     private static final SupplierService supplierService = new SupplierService();
 
     public static void menu() {
